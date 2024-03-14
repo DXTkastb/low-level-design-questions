@@ -1,6 +1,6 @@
 lld questions
 
-*Learnings:*
+**Learnings:**
 
 1. Understand the requirements and create a rought flow chart of problem execution. Ask interviewer for clarifications.
 2. Create UML diagrams for classes with methods and instance variables.
