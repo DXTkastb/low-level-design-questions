@@ -1,8 +1,8 @@
 package lld.tictactoe;
 
-public class HumanPlayer {
+public class HumanPlayer extends Player{
 
-	public Player(String name, Character symbol) {
+	public HumanPlayer(String name, Character symbol) {
 		super(name,symbol);
 	}
 

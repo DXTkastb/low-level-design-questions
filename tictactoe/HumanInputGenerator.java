@@ -3,7 +3,7 @@ import java.io.*;
 
 public class HumanInputGenerator implements InputGenerationStrategy {
 	private final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-	private static UserInputService service;
+	private static HumanInputGenerator service;
 	
 	private HumanInputGenerator() {
 		
@@ -16,8 +16,13 @@ public class HumanInputGenerator implements InputGenerationStrategy {
 	
 	@Override
 	public Position getPosition(Game game) {
-		Integer row = Integer.parseInt(reader.readLine());
-		Integer column = Integer.parseInt(reader.readLine());
+		Integer row = -1, column = -1;
+		try { row = Integer.parseInt(reader.readLine());
+		column = Integer.parseInt(reader.readLine());
+		}
+		catch(Exception e) {
+			System.out.println("some error occurred");
+		}
 		return new Position(row,column);
 	}
 	

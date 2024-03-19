@@ -27,6 +27,10 @@ public class Game {
 		return aiGameStrategy;
 	}
 	
+	public void playGame() {
+		gameMechanism.playGame(this);
+	}
+	
 	
 	public static class GameBuilder {
 	
@@ -34,6 +38,9 @@ public class Game {
 		protected GameMechanism mechanism = new DefaultGameMechanism();
 		protected InputGenerationStrategy gameStrategy = null;
 		protected List<Player> listOfPlayers = new ArrayList<>();
+		
+		public GameBuilder() {
+		}
 		
 		public GameBuilder setGrid(Grid newGrid) {
 			this.grid = newGrid;
@@ -61,8 +68,8 @@ public class Game {
 			return this;
 		}
 		
-		public static Game build(GameBuilder gameBuilder) {
-			return new Game(gameBuilder);
+		public Game build() {
+			return new Game(this);
 		}
 	
 	}
